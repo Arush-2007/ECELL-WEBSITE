@@ -1,4 +1,4 @@
-
+/* Import Harry Potter-style font */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:wght@400;600&display=swap');
 
 * {
@@ -21,7 +21,7 @@ header {
     margin-bottom: 40px;
 }
 
-header .brand-logo {
+header .logo {
     width: 120px;
     margin-bottom: 12px;
 }
@@ -61,7 +61,7 @@ header p {
     background-color: #eaeaea;
 }
 
-.countdown, .registration, .event-details, .about {
+.countdown, .registration {
     margin: 60px 0;
     text-align: center;
 }
@@ -135,17 +135,24 @@ h2 {
     color: #90ee90;
 }
 
-/* Event Details styling with white text */
-.event-details {
-    max-width: 600px;
+/* Container holding About the Event, Event Details and About E-cell */
+.main-info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 60px auto;
+    max-width: 1200px;
+}
+
+/* About the Event box on the left */
+.about {
+    flex: 1;
     background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    margin: 40px auto;
-    transform: translateX(10%);
     font-family: 'MedievalSharp', cursive;
     color: white;
     text-align: left;
@@ -154,17 +161,32 @@ h2 {
     border: 2px solid rgba(255, 215, 0, 0.4);
 }
 
-/* Reuse the same style for "About the Event" box */
-.about {
-    max-width: 600px;
+/* Event Details box centered */
+.event-details {
+    flex: 1;
     background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    margin: 40px auto;
-    transform: translateX(10%);
+    font-family: 'MedievalSharp', cursive;
+    color: white;
+    text-align: left;
+    font-size: 1.1rem;
+    animation: floatParchment 4s ease-in-out infinite;
+    border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+/* About E-cell box on the right */
+.about-ecell {
+    flex: 1;
+    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
     font-family: 'MedievalSharp', cursive;
     color: white;
     text-align: left;
@@ -174,186 +196,61 @@ h2 {
 }
 
 @keyframes floatParchment {
-    0% { transform: translateX(10%) translateY(0px); }
-    50% { transform: translateX(10%) translateY(-10px); }
-    100% { transform: translateX(10%) translateY(0px); }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
+/* Prizes container: center aligned heading outside box */
+.prizes-wrapper {
+    max-width: 600px;
+    margin:
+50px auto 80px auto;
+text-align: center;
+position: relative;
+}
+
+/* Prizes heading with emoji above box */
+.prizes-heading {
+font-family: 'MedievalSharp', cursive;
+font-size: 3rem;
+color: #ffcc00;
+margin-bottom: 18px;
+text-shadow: 0 0 8px #ff8c00;
+}
+
+/* Prizes info box below heading */
+.prizes-box {
+background: rgba(255, 215, 0, 0.15);
+padding: 25px 30px;
+border-radius: 20px;
+color: #3d2300;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+font-size: 1.15rem;
+box-shadow: 0 0 15px #ffcc00;
+border: 2px solid #ffcc00;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 70px;
+text-align: center;
+margin-top: 80px;
+font-size: 0.95rem;
+color: #aaa;
+font-family: 'Poppins', sans-serif;
 }
 
-body.dark {
-    background: #1a0000;
-    color: #dddddd;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+.main-info-container {
+flex-direction: column;
+gap: 40px;
 }
-
-body.dark #timer div {
-    background: rgba(255, 255, 255, 0.10);
+.about, .event-details, .about-ecell {
+max-width: 100%;
 }
-
-body.dark #toggle-mode {
-    background-color: #2a2a2a;
-    color: #ffffff;
+#timer {
+flex-wrap: wrap;
 }
-
-body.dark .registration button {
-    background-color: #2a2a2a;
-    color: #ffffff;
-}
-
-@media (max-width: 600px) {
-    #timer {
-        flex-direction: column;
-    }
-
-    header h1 {
-        font-size: 2.1rem;
-    }
-
-    header p {
-        font-size: 0.95rem;
-    }
-}
-/* Container for About and E-cell side by side */
-.about-ecell-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1300px;
-    margin: 40px auto;
-    gap: 20px;
-}
-
-/* About the Event box aligned left */
-.about {
-    flex: 1;
-    max-width: 600px;
-    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    font-family: 'MedievalSharp', cursive;
-    color: white;
-    text-align: left;
-    font-size: 1.1rem;
-    animation: floatParchment 4s ease-in-out infinite;
-    border: 2px solid rgba(255, 215, 0, 0.4);
-}
-
-/* New About E-cell box aligned right */
-.about-ecell {
-    flex: 1;
-    max-width: 600px;
-    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    font-family: 'MedievalSharp', cursive;
-    color: white;
-    text-align: left;
-    font-size: 1.1rem;
-    animation: floatParchment 4s ease-in-out infinite;
-    border: 2px solid rgba(255, 215, 0, 0.4);
-}
-
-/* Prizes big box container */
-.prizes-container {
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #b8860b, #ffcc00);
-    box-shadow: 0 0 40px #ffcc00;
-    font-family: 'MedievalSharp', cursive;
-    color: #3b2f00;
-    font-size: 1.2rem;
-    border: 3px solid #ffd700;
-}
-
-/* Prizes heading */
-.prizes-heading {
-    font-family: 'MedievalSharp', cursive;
-    font-size: 3rem;
-    color: #ffd700;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #ffcc00;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-/* Container for About and E-cell side by side */
-.about-ecell-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1300px;
-    margin: 40px auto;
-    gap: 20px;
-}
-
-/* About the Event box aligned left */
-.about {
-    flex: 1;
-    max-width: 600px;
-    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    font-family: 'MedievalSharp', cursive;
-    color: white;
-    text-align: left;
-    font-size: 1.1rem;
-    animation: floatParchment 4s ease-in-out infinite;
-    border: 2px solid rgba(255, 215, 0, 0.4);
-}
-
-/* New About E-cell box aligned right */
-.about-ecell {
-    flex: 1;
-    max-width: 600px;
-    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    font-family: 'MedievalSharp', cursive;
-    color: white;
-    text-align: left;
-    font-size: 1.1rem;
-    animation: floatParchment 4s ease-in-out infinite;
-    border: 2px solid rgba(255, 215, 0, 0.4);
-}
-
-/* Prizes big box container */
-.prizes-container {
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #b8860b, #ffcc00);
-    box-shadow: 0 0 40px #ffcc00;
-    font-family: 'MedievalSharp', cursive;
-    color: #3b2f00;
-    font-size: 1.2rem;
-    border: 3px solid #ffd700;
-}
-
-/* Prizes heading */
-.prizes-heading {
-    font-family: 'MedievalSharp', cursive;
-    font-size: 3rem;
-    color: #ffd700;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #ffcc00;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
