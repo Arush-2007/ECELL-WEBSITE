@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+/* Import Harry Potter-style font */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:wght@400;600&display=swap');
 
 * {
     margin: 0;
@@ -20,7 +21,7 @@ header {
     margin-bottom: 40px;
 }
 
-header .logo {
+header .brand-logo {
     width: 120px;
     margin-bottom: 12px;
 }
@@ -31,6 +32,14 @@ header h1 {
     font-family: 'MedievalSharp', cursive;
     color: #ffcc00;
     text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
+.subheading {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.5rem;
+    color: #ffcc99;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #ffd700;
 }
 
 header p {
@@ -52,9 +61,16 @@ header p {
     background-color: #eaeaea;
 }
 
-.countdown, .about, .registration {
+.countdown, .signup, .event-details {
     margin: 60px 0;
     text-align: center;
+}
+
+h2 {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 0 0 8px #ff8c00;
 }
 
 #timer {
@@ -69,15 +85,24 @@ header p {
     background: rgba(255, 255, 255, 0.15);
     padding: 16px 22px;
     border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-.registration form {
+.signup form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    max-width: 600px;
+    border: 2px solid rgba(255, 215, 0, 0.4);
 }
 
-.registration input {
+.signup input {
     width: 85%;
     padding: 13px;
     margin: 12px 0;
@@ -87,7 +112,7 @@ header p {
     font-size: 1rem;
 }
 
-.registration button {
+.signup button {
     padding: 12px 32px;
     background-color: #ffffff;
     border: none;
@@ -99,11 +124,11 @@ header p {
     margin-top: 12px;
 }
 
-.registration button:hover {
+.signup button:hover {
     background-color: #dadada;
 }
 
-#registration-success {
+#success-message {
     margin-top: 22px;
     font-size: 1.1rem;
     color: #90ee90;
@@ -129,7 +154,7 @@ body.dark #toggle-mode {
     color: #ffffff;
 }
 
-body.dark .registration button {
+body.dark .signup button {
     background-color: #2a2a2a;
     color: #ffffff;
 }
@@ -148,33 +173,24 @@ body.dark .registration button {
     }
 }
 
-/* Hogwarts-style Parchment Event Box */
 .event-details {
     max-width: 600px;
-    background: url('https://i.imgur.com/9D6xJlb.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
     margin: 40px auto;
     transform: translateX(10%);
     font-family: 'MedievalSharp', cursive;
-    color: #3b1f00;
+    color: #f5f5f5;
     text-align: left;
     font-size: 1.1rem;
-    animation: floatParchment 4s ease-in-out infinite;
     border: 2px solid rgba(255, 215, 0, 0.4);
+    animation: floatParchment 4s ease-in-out infinite;
 }
 
 @keyframes floatParchment {
-    0% {
-        transform: translateX(10%) translateY(0px);
-    }
-    50% {
-        transform: translateX(10%) translateY(-10px);
-    }
-    100% {
-        transform: translateX(10%) translateY(0px);
-    }
+    0% { transform: translateX(10%) translateY(0px); }
+    50% { transform: translateX(10%) translateY(-10px); }
+    100% { transform: translateX(10%) translateY(0px); }
 }
