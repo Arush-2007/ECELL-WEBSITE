@@ -61,7 +61,7 @@ header p {
     background-color: #eaeaea;
 }
 
-.countdown, .signup, .event-details {
+.countdown, .registration, .event-details, .about {
     margin: 60px 0;
     text-align: center;
 }
@@ -89,7 +89,8 @@ h2 {
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-.signup form {
+/* Register Now form styling */
+.registration form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,7 +103,7 @@ h2 {
     border: 2px solid rgba(255, 215, 0, 0.4);
 }
 
-.signup input {
+.registration input {
     width: 85%;
     padding: 13px;
     margin: 12px 0;
@@ -112,7 +113,7 @@ h2 {
     font-size: 1rem;
 }
 
-.signup button {
+.registration button {
     padding: 12px 32px;
     background-color: #ffffff;
     border: none;
@@ -124,14 +125,58 @@ h2 {
     margin-top: 12px;
 }
 
-.signup button:hover {
+.registration button:hover {
     background-color: #dadada;
 }
 
-#success-message {
+#success-message, #registration-success {
     margin-top: 22px;
     font-size: 1.1rem;
     color: #90ee90;
+}
+
+/* Event Details styling with white text */
+.event-details {
+    max-width: 600px;
+    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    margin: 40px auto;
+    transform: translateX(10%);
+    font-family: 'MedievalSharp', cursive;
+    color: white;
+    text-align: left;
+    font-size: 1.1rem;
+    animation: floatParchment 4s ease-in-out infinite;
+    border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+/* Reuse the same style for "About the Event" box */
+.about {
+    max-width: 600px;
+    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    margin: 40px auto;
+    transform: translateX(10%);
+    font-family: 'MedievalSharp', cursive;
+    color: white;
+    text-align: left;
+    font-size: 1.1rem;
+    animation: floatParchment 4s ease-in-out infinite;
+    border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+@keyframes floatParchment {
+    0% { transform: translateX(10%) translateY(0px); }
+    50% { transform: translateX(10%) translateY(-10px); }
+    100% { transform: translateX(10%) translateY(0px); }
 }
 
 footer {
@@ -154,7 +199,7 @@ body.dark #toggle-mode {
     color: #ffffff;
 }
 
-body.dark .signup button {
+body.dark .registration button {
     background-color: #2a2a2a;
     color: #ffffff;
 }
@@ -171,29 +216,4 @@ body.dark .signup button {
     header p {
         font-size: 0.95rem;
     }
-}
-
-.event-details {
-    max-width: 600px;
-    background: url('https://images.unsplash.com/photo-1589820296156-d5a0a1f2fdc0?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    margin: 40px auto;
-    transform: translateX(10%);
-    font-family: 'MedievalSharp', cursive;
-    color: #3b1f00;
-    text-align: left;
-    font-size: 1.1rem;
-    animation: floatParchment 4s ease-in-out infinite;
-    border: 2px solid rgba(255, 215, 0, 0.4);
-}
-
-
-@keyframes floatParchment {
-    0% { transform: translateX(10%) translateY(0px); }
-    50% { transform: translateX(10%) translateY(-10px); }
-    100% { transform: translateX(10%) translateY(0px); }
 }
