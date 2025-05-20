@@ -1,6 +1,5 @@
-// Countdown Timer
 // ====== Countdown Timer ======
-const countdownDate = new Date('2025-12-25T00:00:00').getTime(); // Change your event date here
+const countdownDate = new Date('2025-12-25T00:00:00').getTime();
 
 const timerDays = document.getElementById('days');
 const timerHours = document.getElementById('hours');
@@ -39,11 +38,7 @@ updateCountdown();
 const toggleButton = document.getElementById('toggle-mode');
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    if (document.body.classList.contains('dark')) {
-        toggleButton.textContent = 'Light Mode';
-    } else {
-        toggleButton.textContent = 'Dark Mode';
-    }
+    toggleButton.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
 });
 
 
@@ -57,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             card.style.opacity = 1;
             card.style.transform = 'translateY(0)';
-        }, index * 150); // stagger animation by 150ms per card
+        }, index * 150);
     });
 });
 
@@ -65,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ====== Registration Form Handler ======
 const registrationForm = document.getElementById('registration-form');
 const successMessage = document.getElementById('registration-success');
+const magicAudio = document.getElementById('magic-sound');
 
 registrationForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -77,14 +73,65 @@ registrationForm.addEventListener('submit', e => {
         return;
     }
 
-    // Basic email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
         alert('Please enter a valid email address.');
         return;
     }
 
-    // Simulate successful registration
-    successMessage.textContent = `Thank you for registering, ${name}! We'll keep you updated.`;
+    successMessage.textContent = `✨ Thank you for registering, ${name}! We'll keep you updated. ✨`;
     registrationForm.reset();
+    magicAudio.play();
+});
+
+
+// ====== Sparkling Particles ======
+const sparkleContainer = document.getElementById('sparkle-container');
+setInterval(() => {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = `${Math.random() * 100}vw`;
+    sparkle.style.top = `${Math.random() * 100}vh`;
+    sparkle.style.animationDuration = `${Math.random() * 2 + 1}s`;
+    sparkleContainer.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 3000);
+}, 150);
+
+
+// ====== Flickering Heading Effect ======
+const flickerEls = document.querySelectorAll('.flicker');
+setInterval(() => {
+    flickerEls.forEach(el => {
+        el.style.opacity = Math.random() > 0.9 ? 0.6 : 1;
+    });
+}, 200);
+
+
+// ====== Flying Elements on Hover ======
+const flyingEls = document.querySelectorAll('.flying');
+flyingEls.forEach(el => {
+    el.addEventListener('mouseover', () => {
+        el.classList.add('fly');
+        setTimeout(() => el.classList.remove('fly'), 1500);
+    });
+});
+
+
+// ====== Magical Hover Effect for Font ======
+const magicalEls = document.querySelectorAll('.magical-hover');
+magicalEls.forEach(el => {
+    el.addEventListener('mouseover', () => {
+        el.style.textShadow = '0 0 8px #fff, 0 0 12px #0ff, 0 0 16px #0ff';
+    });
+    el.addEventListener('mouseout', () => {
+        el.style.textShadow = '';
+    });
+});
+
+
+// ====== Custom Magical Cursor ======
+const cursor = document.getElementById('custom-cursor');
+document.addEventListener('mousemove', e => {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
 });
