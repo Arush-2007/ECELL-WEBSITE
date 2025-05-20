@@ -27,7 +27,7 @@ header .brand-logo {
 }
 
 header h1 {
-    font-size: 2.7rem;
+    font-size: 3.5rem; /* Increased from 2.7rem */
     margin-bottom: 12px;
     font-family: 'MedievalSharp', cursive;
     color: #ffcc00;
@@ -147,4 +147,17 @@ body.dark .signup button {
     header p {
         font-size: 0.95rem;
     }
+}
+
+/* Event Details Box - Slightly right from center */
+.event-details {
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 24px 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    margin: 40px auto;
+    transform: translateX(10%); /* Slightly shifted right */
+    text-align: left;
+    font-size: 1.05rem;
 }
