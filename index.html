@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Startup Blitz 2.0 - E-Cell NIT Agartala</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
     <header>
-        <img src="images.jpeg" alt="E-Cell Logo" class="logo">
+        <img src="images.jpeg" alt="E-Cell Logo" class="logo" />
         <h1>Startup Blitz 2.0</h1>
+        <h3 class="subheading">Convert your IDEA into INNOVATION</h3>
         <p>Organized by E-Cell, NIT Agartala</p>
         <button id="toggle-mode">Toggle Light/Dark Mode</button>
     </header>
@@ -27,29 +28,29 @@
         </div>
     </section>
 
-    <!-- Floating Hogwarts-style Event Details -->
-    <section class="event-details">
-        <h2>🪄 Event Details</h2>
-        <p><strong>Date:</strong> June 15, 2025</p>
-        <p><strong>Time:</strong> 5:00 PM – 8:00 PM</p>
-        <p><strong>Location:</strong> Main Auditorium, NIT Agartala</p>
-        <p>✨ Join us for a magical evening of innovation, pitch battles, mentorship, and networking — where your startup dreams take flight!</p>
+    <section class="registration box-style">
+        <h2>Register Now</h2>
+        <form id="registration-form">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="email" id="email" placeholder="Your Email" required />
+            <input type="text" id="college" placeholder="Your College" required />
+            <button type="submit">Register</button>
+        </form>
+        <div id="registration-success"></div>
     </section>
 
-    <section class="about">
+    <section class="about box-style">
         <h2>About the Event</h2>
         <p>Startup Blitz 2.0 is a one-day entrepreneurial extravaganza that brings together innovators, investors, and mentors under one roof. Gear up for workshops, pitch battles, networking sessions, and a whole lot of inspiration!</p>
     </section>
 
-    <section class="registration">
-        <h2>Register Now</h2>
-        <form id="registration-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <input type="text" id="college" placeholder="Your College" required>
-            <button type="submit">Register</button>
-        </form>
-        <div id="registration-success"></div>
+    <section class="event-details">
+        <h2>Event Details</h2>
+        <ul>
+            <li>📍 Venue: NIT Agartala Campus</li>
+            <li>🕘 Date: June 5, 2025</li>
+            <li>💬 Networking, Pitches, and Prizes</li>
+        </ul>
     </section>
 
     <footer>
