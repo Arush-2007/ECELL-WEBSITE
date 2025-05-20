@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +13,22 @@
 </head>
 <body>
 
+    <!-- Magical Sparkle Effect -->
+    <div id="sparkle-container"></div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+
     <header>
-        <img src="images.jpeg" alt="E-Cell Logo" class="logo" />
-        <h1>Startup Blitz 2.0</h1>
-        <h2 class="subheading">Convert your IDEA into INNOVATION</h2>
+        <img src="images.jpeg" alt="E-Cell Logo" class="logo flying" />
+        <h1 class="flicker magical-hover">Startup Blitz 2.0</h1>
+        <h2 class="subheading magical-hover">Convert your IDEA into INNOVATION</h2>
         <p>Organized by E-Cell, NIT Agartala</p>
-        <button id="toggle-mode">Toggle Light/Dark Mode</button>
+        <button id="toggle-mode" class="magical-hover">Toggle Light/Dark Mode</button>
     </header>
 
     <section class="countdown">
-        <h2 id="countdown-heading">
+        <h2 id="countdown-heading" class="magical-hover">
             Event Countdown <span class="clock-emoji">🕰️</span>
         </h2>
         <div id="timer">
@@ -33,36 +40,34 @@
     </section>
 
     <section class="registration box-glow">
-        <h2>Register Now</h2>
+        <h2 class="magical-hover">Register Now</h2>
         <form id="registration-form" class="form-vertical">
             <input type="text" id="name" placeholder="Your Name" required />
             <input type="email" id="email" placeholder="Your Email" required />
             <input type="text" id="college" placeholder="Your College" required />
-            <button type="submit">Register</button>
+            <button type="submit" class="magical-hover">Register</button>
         </form>
         <div id="registration-success"></div>
     </section>
 
-    <!-- New flex container for About the Event and About E-cell side by side -->
     <section class="about-ecell-container">
         <section class="about">
-            <h2>About the Event</h2>
+            <h2 class="magical-hover">About the Event</h2>
             <p>
                 Startup Blitz 2.0 is a one-day entrepreneurial extravaganza that brings together innovators, investors, and mentors under one roof. Gear up for workshops, pitch battles, networking sessions, and a whole lot of inspiration!
             </p>
         </section>
 
         <section class="about-ecell">
-            <h2>About E-cell</h2>
+            <h2 class="magical-hover">About E-cell</h2>
             <p>
                 E-cell is a vibrant entrepreneurial community at NIT Agartala fostering innovation, startups, and mentorship for aspiring entrepreneurs.
             </p>
         </section>
     </section>
 
-    <!-- Existing Event Details section -->
     <section class="event-details white-text">
-        <h2>Event Details</h2>
+        <h2 class="magical-hover">Event Details</h2>
         <p>
             <strong>Date:</strong> 15th June 2025<br />
             <strong>Time:</strong> 10:00 AM - 6:00 PM<br />
@@ -71,9 +76,8 @@
         </p>
     </section>
 
-    <!-- New Prizes box -->
     <section class="prizes-container">
-        <div class="prizes-heading">Prizes 🪄</div>
+        <div class="prizes-heading magical-hover">Prizes 🪄</div>
         <p>
             Exciting magical prizes await the winners, including limited edition collectibles, vouchers, and more. Get ready to claim your reward!
         </p>
@@ -83,6 +87,43 @@
         <p>© 2025 Entrepreneurship Cell, NIT Agartala. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <audio id="magic-sound" src="magic-sound.mp3" preload="auto"></audio>
+
+    <script>
+        const form = document.getElementById("registration-form");
+        const success = document.getElementById("registration-success");
+        const audio = document.getElementById("magic-sound");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            success.textContent = "✨ You are successfully registered! ✨";
+            audio.play();
+            form.reset();
+        });
+
+        // Sparkles
+        const sparkleContainer = document.getElementById('sparkle-container');
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.animationDuration = (Math.random() * 2 + 1) + 's';
+            sparkleContainer.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 3000);
+        }, 100);
+
+        // Flying logo animation
+        document.querySelector('.logo').addEventListener('mouseover', function () {
+            this.classList.add('fly');
+            setTimeout(() => this.classList.remove('fly'), 1500);
+        });
+
+        // Custom cursor
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 'px';
+        });
+    </script>
 </body>
 </html>
