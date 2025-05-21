@@ -287,91 +287,36 @@ body.dark .registration button {
     align-items: center;
     gap: 10px;
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Startup Blitz 2.0 - E-Cell NIT Agartala</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-</head>
-<body>
 
-    <header>
-        <img src="images.jpeg" alt="E-Cell Logo" class="logo" />
-        <h1>Startup Blitz 2.0</h1>
-        <h2 class="subheading">Convert your IDEA into INNOVATION</h2>
-        <p>Organized by E-Cell, NIT Agartala</p>
-        <button id="toggle-mode">Toggle Light/Dark Mode</button>
-    </header>
+  /* Sparkling particles */
+#magic-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
 
-    <section class="countdown">
-        <h2 id="countdown-heading">
-            Event Countdown <span class="clock-emoji">🕰️</span>
-        </h2>
-        <div id="timer">
-            <div><span id="days"></span><br />Days</div>
-            <div><span id="hours"></span><br />Hours</div>
-            <div><span id="minutes"></span><br />Minutes</div>
-            <div><span id="seconds"></span><br />Seconds</div>
-        </div>
-    </section>
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #ffd700, transparent);
+    border-radius: 50%;
+    animation: sparkle 5s linear infinite;
+    opacity: 0.8;
+}
 
-    <section class="registration box-glow">
-        <h2>Register Now</h2>
-        <form id="registration-form" class="form-vertical">
-            <input type="text" id="name" placeholder="Your Name" required />
-            <input type="email" id="email" placeholder="Your Email" required />
-            <input type="text" id="college" placeholder="Your College" required />
-            <button type="submit">Register</button>
-        </form>
-        <div id="registration-success"></div>
-    </section>
-
-    <!-- New flex container for About the Event and About E-cell side by side -->
-    <section class="about-ecell-container">
-        <section class="about">
-            <h2>About the Event</h2>
-            <p>
-                Startup Blitz 2.0 is a one-day entrepreneurial extravaganza that brings together innovators, investors, and mentors under one roof. Gear up for workshops, pitch battles, networking sessions, and a whole lot of inspiration!
-            </p>
-        </section>
-
-        <section class="about-ecell">
-            <h2>About E-cell</h2>
-            <p>
-                E-cell is a vibrant entrepreneurial community at NIT Agartala fostering innovation, startups, and mentorship for aspiring entrepreneurs.
-            </p>
-        </section>
-    </section>
-
-    <!-- Existing Event Details section -->
-    <section class="event-details white-text">
-        <h2>Event Details</h2>
-        <p>
-            <strong>Date:</strong> 15th June 2025<br />
-            <strong>Time:</strong> 10:00 AM - 6:00 PM<br />
-            <strong>Venue:</strong> NIT Agartala Auditorium<br />
-            <strong>Activities:</strong> Workshops, Startup Pitch Battles, Networking, and more!
-        </p>
-    </section>
-
-    <!-- New Prizes box -->
-    <section class="prizes-container">
-        <div class="prizes-heading">Prizes 🪄</div>
-        <p>
-            Exciting magical prizes await the winners, including limited edition collectibles, vouchers, and more. Get ready to claim your reward!
-        </p>
-    </section>
-
-    <footer>
-        <p>© 2025 Entrepreneurship Cell, NIT Agartala. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+@keyframes sparkle {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
